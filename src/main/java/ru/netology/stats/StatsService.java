@@ -2,22 +2,18 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int sumAllSale(int[] sum) {
-        int sale = 0;
-        for (int s : sum) {
-            sale = s + sale;
+    public int sumAllSale(int[] arr) {
+
+        int summSale = 0;
+        for (int sale : arr) {
+            summSale = sale + summSale;
         }
-        return sale;
+        return summSale;
     }
 
-    public int averageSumAllSale(int[] sum) {
-        //int average = sumAllSale(sum) / sum.length;
-        // return average;
-        int average = 0;
-        for (int a : sum) {
-            average = a + average;
-        }
-        return average / sum.length;
+    public int averageSumAllSale(int[] arr) {
+        int average = sumAllSale(arr) / arr.length;
+        return average;
     }
 
     public int peakSale(int[] sum) {
@@ -27,17 +23,38 @@ public class StatsService {
                 peak = i;
             }
         }
-        return peak;
+        return peak + 1;
     }
 
-    public int minSale(int[] sum) {
+    public int minSale(int[] arr) {
         int min = 0;
-        for (int i = 0; i < sum.length; i++) {
-            if (sum[i] <= sum[min]) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] <= arr[min]) {
                 min = i;
             }
         }
-        return min;
+        return min + 1;
+    }
+
+    public int quantityMonthSaleMin(int[] arr) {
+        int quantityMin = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < averageSumAllSale(arr)) {
+                quantityMin++;
+            }
+        }
+        return quantityMin;
+    }
+
+    public int quantityMonthSaleMax(int[] arr) {
+        int quantityMax = 0;
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] > averageSumAllSale(arr)) {
+                quantityMax++;
+            }
+        }
+        return quantityMax;
     }
 }
 
