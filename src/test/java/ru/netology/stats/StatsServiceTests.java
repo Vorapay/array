@@ -9,10 +9,10 @@ public class StatsServiceTests {
     public void sumAllSales() {
         StatsService service = new StatsService();
 
-        int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedSales = 180;
-        int actualSales = service.sumAllSale(arr);
+        long actualSales = service.sumAllSale(arr);
 
         Assertions.assertEquals(expectedSales, actualSales);
 
@@ -23,10 +23,10 @@ public class StatsServiceTests {
     public void averageSumAllSales() {
         StatsService service = new StatsService();
 
-        int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedAverage = 15;
-        int actualAverage = service.averageSumAllSale(arr);
+        long actualAverage = service.averageSumAllSale(arr);
 
         Assertions.assertEquals(expectedAverage, actualAverage);
     }
@@ -59,10 +59,10 @@ public class StatsServiceTests {
     public void quantityMonthSaleMin() {
         StatsService service = new StatsService();
 
-        int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedQuantityMin = 5;
-        int actualQuantityMin = service.quantityMonthSaleMin(arr);
+        long actualQuantityMin = service.quantityMonthSaleMin(arr);
 
         Assertions.assertEquals(expectedQuantityMin, actualQuantityMin);
     }
@@ -71,10 +71,10 @@ public class StatsServiceTests {
     public void quantityMonthSaleMax() {
         StatsService service = new StatsService();
 
-        int[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedQuantityMax = 5;
-        int actualQuantityMax = service.quantityMonthSaleMax(arr);
+        long actualQuantityMax = service.quantityMonthSaleMax(arr);
 
         Assertions.assertEquals(expectedQuantityMax, actualQuantityMax);
     }
